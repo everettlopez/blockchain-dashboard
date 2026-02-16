@@ -1,0 +1,89 @@
+/* html {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* prevents content from touching edges on small screens */
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+
+header button {
+    background-color:IndianRed;
+    color: white;
+    width: 320px;
+    height: 50px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+/* Welcome Section*/
+.welcome-section {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.welcome-section-text {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+    justify-content: center;
+    text-align: center;
+
+    padding: 20px;
+
+    gap: 30px;
+}
+
+.welcome-section-text-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* Welcome Button Section */
+
+.welcome-section-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+.welcome-section-signup-button {
+    background-color:IndianRed;
+    color: white;
+    width: 320px;
+    height: 50px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-size: 17px;
+
+    align-content:center;
+    text-decoration:none;
+}
+
+.welcome-section-login-button {
+    background-color:white;
+    color: IndianRed;
+    width: 320px;
+    height: 50px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-size: 17px;
+
+    align-content:center;
+    text-decoration:none;
+}
