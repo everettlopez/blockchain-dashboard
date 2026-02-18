@@ -11,3 +11,6 @@ def index(request):
     return render(request, "index.html", {
         "token_prices": token_prices
     })
+
+def signup(request):
+    return render(request, "login.html")
