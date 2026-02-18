@@ -10,6 +10,8 @@ header {
     justify-content: space-between;
     border-bottom: 1px solid lightgray;
     padding: 10px;
+    font-family: "Poppins", sans-serif;
+    color: indianred;
 }
 
 header button {
@@ -27,8 +29,8 @@ header button {
     display: flex;
     gap: 30px;
     justify-content: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .welcome-section-text {
@@ -56,6 +58,8 @@ header button {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    font-family: sans-serif;
 
     justify-content:center;
     align-items:center;
@@ -86,4 +90,77 @@ header button {
 
     align-content:center;
     text-decoration:none;
+}
+
+/* Crypto Prices Banner*/
+
+.token_prices-banner {
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+
+    background-color: #F2F0EF;
+
+    padding: 10px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.token-price-banner-card {
+    display:flex;
+    flex-direction: row;
+
+    gap: 10px;
+
+    background-color:white;
+
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+
+    padding: 10px;
+
+    font-family: sans-serif;
+}
+
+.token-price-banner-card-text {
+    display: flex;
+    flex-direction: column;
+
+    justify-content:center;
+
+}
+
+/* Information Section 1 */
+
+.information-section-1 {
+    display:flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+    gap: 40px;
+    
+
+    font-family: sans-serif;
+}
+
+.information-section-1-text {
+    display: flex;
+    flex-direction: column;
+
+    width: 35%;
+
+    gap: 25px;
+}
+
+.information-section-1-header {
+    font-family: "Poppins", sans-serif;
+    font-size: 42px;
+    font-weight:bolder;
+    color: IndianRed;
 }
