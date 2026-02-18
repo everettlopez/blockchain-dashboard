@@ -19,9 +19,17 @@ header button {
     color: white;
     width: 320px;
     height: 50px;
-    border: 1px solid lightgray;
+    border: none;
     border-radius: 10px;
     font-size: 17px;
+
+    box-shadow: 0 6px rgb(191, 43, 43);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+header button:hover {
+    background-color: rgb(246, 98, 98);
 }
 
 /* Welcome Section*/
@@ -57,7 +65,7 @@ header button {
 .welcome-section-buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 
     font-family: sans-serif;
 
@@ -71,12 +79,20 @@ header button {
     color: white;
     width: 320px;
     height: 50px;
-    border: 1px solid lightgray;
+    border: 2px solid IndianRed;
     border-radius: 10px;
     font-size: 17px;
 
     align-content:center;
     text-decoration:none;
+
+    box-shadow: 0 6px rgb(191, 43, 43);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.welcome-section-signup-button:hover {
+    background-color: rgb(246, 98, 98);
 }
 
 .welcome-section-login-button {
@@ -84,12 +100,21 @@ header button {
     color: IndianRed;
     width: 320px;
     height: 50px;
-    border: 1px solid lightgray;
+    border: 2px solid rgb(146, 144, 144);
     border-radius: 10px;
     font-size: 17px;
 
     align-content:center;
     text-decoration:none;
+
+    box-shadow: 0 6px rgb(146, 144, 144);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.welcome-section-login-button:hover{
+    background-color:lightgray;
+    color:white;
 }
 
 /* Crypto Prices Banner*/
