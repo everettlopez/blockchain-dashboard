@@ -2,7 +2,9 @@ from django.shortcuts import render
 
 from app.ingestion.cmc import fetch_prices
 from app.ingestion.alchemy import fetch_tokens_by_wallet
-from app.forms import LoginForm
+from app.forms import LoginForm, SignupForm
+from django.contrib.auth.models import User
+from app.models import UserProfile
 
 from django.shortcuts import render, redirect 
 from django.contrib.auth import authenticate, login 
@@ -20,29 +22,56 @@ def index(request):
     })
 
 def signup(request):
+    form = SignupForm(request.POST or None)
+
+    if request.method == "POST" and form.is_valid():
+        username = form.cleaned_data["username"]
+        password = form.cleaned_data["password"]
+        wallet = form.cleaned_data["wallet_address"]
+
+        if User.objects.filter(username=username).exists(): 
+            form.add_error("username", "This username is already taken.") 
+            return render(request, "signup.html", {"form": form})
+
+        user = User.objects.create_user(username=username, password=password)
+        UserProfile.objects.create(user=user, wallet_address=wallet)
+
+        user = authenticate(request, username=username, password=password)
+        login(request, user)
+
+        return redirect("dashboard")
+
+    return render(request, "signup.html", {
+        "form": form
+    })
+
+def login_view(request):
     form = LoginForm(request.POST or None)
 
     if request.method == "POST" and form.is_valid():
         username = form.cleaned_data["username"]
         password = form.cleaned_data["password"]
-
-
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
+            print("logged in")
             return redirect("dashboard")
         else:
-            form.add_error(None, "Invalid username or password")
+            print(" not logged in")
+            form.add_error(None, "Invalid")
 
-    return render(request, "login.html", {
-        "form": form
-    })
+        print("nothin")
+
+    print("FORM VALID:", form.is_valid()) 
+    print("ERRORS:", form.errors)
+    
+    return render(request, "login.html", {"form": form})
 
 @login_required
 def dashboard(request):
 
-    wallet_address = "0x1E6E8695FAb3Eb382534915eA8d7Cc1D1994B152"
+    wallet_address = request.user.userprofile.wallet_address
 
     data = fetch_tokens_by_wallet(wallet_address)
 
