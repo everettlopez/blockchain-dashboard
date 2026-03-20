@@ -14,8 +14,12 @@
 </head>
 <body>
     <main class="login-main">
-        <div class="login-background">
 
+        <div class="login-main-back-button">
+            <a href="{% url 'index' %}">BACK</a>
+        </div>
+
+        <div class="login-background">
             <form method="post" action="">
                 {% csrf_token %}
 

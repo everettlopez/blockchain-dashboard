@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from app.models import UserProfile
 
 from django.shortcuts import render, redirect 
-from django.contrib.auth import authenticate, login 
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 
@@ -60,6 +60,7 @@ def login_view(request):
         else:
             print(" not logged in")
             form.add_error(None, "Invalid")
+            return render(request, "login.html", {"form": form})
 
         print("nothin")
 
@@ -68,7 +69,11 @@ def login_view(request):
     
     return render(request, "login.html", {"form": form})
 
-@login_required
+def logout_view(request):
+    logout(request)
+    return redirect("login")
+
+@login_required()
 def dashboard(request):
 
     wallet_address = request.user.userprofile.wallet_address

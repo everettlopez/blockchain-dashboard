@@ -1,5 +1,5 @@
 .dashboard-html {
-    background-color:indianred;
+    background-color:white;
 }
 
 
@@ -24,7 +24,7 @@
 
     align-items: center;
 
-    color: white;
+    color: black;
 }
 
 .dashboard-menu-navigation {
@@ -59,7 +59,7 @@
     border-radius: 20px;
     padding: 10px;
     height: 100vh;
-    background-color: #545454;
+    background-color: #aba19c;
 
     display: flex;
     flex-direction: column;
@@ -81,6 +81,12 @@
 .dashboard-main-analytics-section-header-subsection-1 {
     display: flex;
     flex-direction: column;
+
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+
+    width: 50%;
 }
 
 .dashboard-main-analytics-section-token-cards {
@@ -90,6 +96,8 @@
     padding: 10px;
 
     gap: 10px;
+    
+    flex-wrap: wrap;
 }
 
 .dashboard-main-analytics-section-token-cards-container {
@@ -135,6 +143,7 @@
     display: flex;
     flex-direction: row;
     padding: 10px;
+    gap: 10px;
 }
 
 .dashboard-main-analytics-section-portfolio-token-balance {
@@ -149,4 +158,10 @@
 
     background-color: white;
     border-radius: 10px;
+}
+
+.dashboard-main-analytics-section-portfolio-d3-visualization {
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
 }
