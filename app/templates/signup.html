@@ -2,7 +2,7 @@
 <html lang="en" class="login-html">
 <head>
     <meta charset="UTF-8">
-    <title>PocketChain - Login</title>
+    <title>PocketChain - Sign Up</title>
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
@@ -13,6 +13,7 @@
 
 </head>
 <body>
+
     <main class="login-main">
 
         <div class="login-main-back-button">
@@ -20,10 +21,11 @@
         </div>
 
         <div class="login-background">
+
             <form method="post" action="">
                 {% csrf_token %}
 
-                <h1>Login</h1>
+                <h1>Create Account</h1>
 
                 <div class="login-form">
                     <div class="login-form-input">
@@ -36,17 +38,18 @@
                         <input type="password" name="password" id="password" placeholder="**********"/>
                     </div>
 
-                <!-- <div class="login-form-input">
+                    <div class="login-form-input">
                         <label for="wallet_address">Wallet Address</label>
                         <input type="text" name="wallet_address" id="wallet_address"/>
-                    </div> -->
+                    </div> 
 
-                    <button type="submit">LOG IN</button>
+                    <button type="submit" class="create-account-button">Create Account</button>
                 </div>
 
             </form>
 
-            <a href="{% url 'signup' %}" class="create-account-button">CREATE A NEW ACCOUNT</a>
+            <a href="{% url 'login' %}" class="create-account-button">LOG IN</a>
+            
         </div>
     </main>
 </body>
