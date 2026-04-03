@@ -79,7 +79,7 @@ header button:hover {
     color: white;
     width: 320px;
     height: 50px;
-    border: 2px solid IndianRed;
+    border: 1px solid IndianRed;
     border-radius: 10px;
     font-size: 17px;
 
@@ -100,7 +100,7 @@ header button:hover {
     color: IndianRed;
     width: 320px;
     height: 50px;
-    border: 2px solid rgb(146, 144, 144);
+    border: 1px solid lightgray;
     border-radius: 10px;
     font-size: 17px;
 
@@ -166,8 +166,8 @@ header button:hover {
     align-items: center;
     justify-content: center;
 
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     gap: 40px;
     
 
