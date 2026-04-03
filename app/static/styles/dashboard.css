@@ -2,166 +2,132 @@
     background-color:white;
 }
 
-
 .dashboard-layout {
     display: flex;
-    flex-direction: row;
-
-    height: 100vh;
-}
-
-.dashboard-menu {
-    display: flex;
     flex-direction: column;
-
-    width: 15%;
-
-    justify-content: space-around;
-
-    padding: 15px;
-    
-    font-family: sans-serif;
-
-    align-items: center;
-
-    color: black;
 }
 
-.dashboard-menu-navigation {
-    display: flex;
-    flex-direction: column;
-
-    gap: 15px;
-}
-
-.dashboard-main {
-    display: flex;
-    flex-direction:column;
-
-    width:100%;
-
-    padding: 15px;
-}
-
-.dashboard-main-header {
-    display: flex;
-    flex-direction: row;
-
-    justify-content: space-between;
-    align-items: center;
-
-    font-family: "Poppins", sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.dashboard-main-analytics-section {
-    border-radius: 20px;
-    padding: 10px;
-    height: 100vh;
-    background-color: #aba19c;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-
-
-}
-
-.dashboard-main-analytics-section-header {
-    display: flex;
+.dashboard-header {
+    display: flex; 
     flex-direction: row;
 
     justify-content: space-between;
 
-    padding: 10px;
-}
-
-.dashboard-main-analytics-section-header-subsection-1 {
-    display: flex;
-    flex-direction: column;
-
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-
-    width: 50%;
-}
-
-.dashboard-main-analytics-section-token-cards {
-    display: flex;
-    flex-direction: row;
-
-    padding: 10px;
-
-    gap: 10px;
-    
-    flex-wrap: wrap;
-}
-
-.dashboard-main-analytics-section-token-cards-container {
-    display: flex;
-    flex-direction: column;
-
-    padding: 10px;
-
-    width: 25%;
-    height: 80px;
-
-    background-color: black;
-
-    border: 1px solid black;
-    border-radius: 10px;
-
-    color: white;
+    text-align: center;
+    align-items: center;
 
     font-family: "Poppins", sans-serif;
+    border-bottom: 1px solid lightgray;
+
 }
 
-.dashboard-main-analytics-section-token-cards-container-header {
+.dashboard-logout-button {
     display: flex;
-    flex-direction: row;
-
-    gap: 10px;
-
     align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
 }
 
-.dashboard-main-analytics-section-token-cards-container-header-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.dashboard-main-analytics-section-token-cards-container img {
-    width: fit-content;
-    height:40px;
+.dashboard-logout-button:hover {
+    background-color: lightgray;
 }
 
 
-.dashboard-main-analytics-section-portfolio {
+/* DAHSBOARD SECOND SECTION (TOKEN CARDS) */
+
+.dashboard-portfolio-card-section {
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 30px;
+
     gap: 10px;
 }
 
-.dashboard-main-analytics-section-portfolio-token-balance {
+.dashboard-portfolio-card {
     display: flex;
     flex-direction: column;
 
     width: 25%;
-
-    padding: 10px;
-
-    gap: 5px;
-
-    background-color: white;
     border-radius: 10px;
+
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+
+    border: 1.2px solid lightgray;
+
+    padding: 15px;
+
+    font-family: "Roboto", sans-serif;
+
+
+    justify-content: center;
+    gap: 10px;
 }
 
-.dashboard-main-analytics-section-portfolio-d3-visualization {
-    background-color: white;
+.dashboard-portfolio-card-header {
+    font-weight: bold;
+}
+
+.dashboard-portfolio-card-header-wallet-balance {
+    font-weight: bold;
+    font-size: 38px;
+}
+
+/* Transaction Graph and History */
+
+.dashboard-transaction-graph-section {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    gap: 10px;
+}
+
+.dashboard-graph-section {
+    width: 70%;
+    height: 80vh;
     border-radius: 10px;
+    border: 1.2px solid lightgray;
+}
+
+.dashboard-graph-section svg {
     width: 100%;
+    height: 100%;
+}
+
+.dashboard-transactions-section {
+    width: 30%;
+    border-radius: 10px;
+    border: 1.2px solid lightgray;
+}
+
+.graph-range-buttons {
+  display: flex;
+}
+
+.range-btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.range-btn.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+.graph-header {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    padding: 10px;
+
+    font-family: "Poppins", sans-serif;
 }

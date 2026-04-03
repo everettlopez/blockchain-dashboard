@@ -15,88 +15,71 @@
 
     <div class="dashboard-layout">
 
-        <div class="dashboard-menu">
+       <div class="dashboard-header">
+        <h1>PocketChain</h1>
 
-            <span>Logo Here</span>
+        <a href="{% url 'logout' %}" class="dashboard-logout-button">Logout</a>
 
-            <div class="dashboard-menu-navigation">
-                <span>Profile</span>
-                <span>Dashboard</span>
-                <span>Simulate</span>
-            </div>
+       </div>
 
-            <a href="{% url 'logout' %}">Logout</a>
+       <div class="dashboard-portfolio-card-section">
+
+        <div class="dashboard-portfolio-card">
+            <span class="dashboard-portfolio-card-header">Portfolio Balance</span>
+            <span class="dashboard-portfolio-card-header-wallet-balance">$43,000.00</span>
+            <span>+20% month over month</span>
         </div>
 
-        <div class="dashboard-main">
+        <div class="dashboard-portfolio-card">
+            <h2>Card 2</h2>
+        </div>
+
+        <div class="dashboard-portfolio-card">
+            <h2>Card 3</h2>
+        </div>
+
+        <div class="dashboard-portfolio-card">
+            <h2>Card 4</h2>
+        </div>
+       </div>
+
+       <div class="dashboard-transaction-graph-section">
+
+        <div class="dashboard-graph-section">
+
+            <div class="graph-header">
+                <span>Sample Title</span>
+
+                <div class="graph-range-buttons">
+                    <button class="range-btn">1D</button>
+                    <button class="range-btn">7D</button>
+                    <button class="range-btn active">1M</button>
+                    <button class="range-btn">3M</button>
+                </div>
+            </div>
+
             
-            <div class="dashboard-main-header">
 
-                <h1>DASHBOARD</h1>
-                <form>
-                    <input type="search" placeholder="Search for features"/>
-                </form>
-                <span>Notifications</span>
-            </div>
-
-            <div class="dashboard-main-analytics-section">
-
-                <div class="dashboard-main-analytics-section-header">
-                    <div class="dashboard-main-analytics-section-header-subsection-1">
-                        <span>Wallet Address</span>
-                        <span>{{wallet_address}}</span>
-                    </div>
-                </div>
-
-                <div class="dashboard-main-analytics-section-token-cards">
-                    
-                    {% for symbol, token in takens_by_wallet.items %}
-                    <div class="dashboard-main-analytics-section-token-cards-container"> 
-
-                        <div class="dashboard-main-analytics-section-token-cards-container-header">
-                            <img src="{{token.tokenMetadata.logo}}" alt="Logo" class="dashboard-main-analytics-section-token-cards-container-img"/>
-
-                            <div class="dashboard-main-analytics-section-token-cards-container-header-text">
-                                <span>{{ token.tokenMetadata.name }}</span>
-                                <span>{{symbol}}</span>
-                            </div>
-                            
-                            
-                        </div>
-
-                        <div>
-                            <span>${{token.tokenPrices.0.value|floatformat:2 }}</span>
-                        </div>
-                    
-                    </div>
-                    {%  endfor %}
-
-
-                </div>
-
-                <div class="dashboard-main-analytics-section-portfolio">
-                    <div class="dashboard-main-analytics-section-portfolio-token-balance">
-                        <h2>Portfolio</h2>
-
-                        {% for symbol, token in takens_by_wallet.items %}
-                        <span>{{symbol}}</span>
-                        <span>{{symbol}} Price: ${{token.tokenPrices.0.value}}</span>
-                        {%  endfor %}
-                    </div>
-
-                    <div class="dashboard-main-analytics-section-portfolio-d3-visualization">
-
-                        <p>d3 Vis</p>
-                    </div>
-                </div>
-            </div>
+            <svg id="transactionGraph"></svg>
         </div>
+
+        <div class="dashboard-transactions-section">
+            <p>Transaction History</p>
+        </div>
+       </div>
 
         
 
     </div>
 
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module">
+    import { renderPortfolioChart } from "/static/js/portfolio.js";
 
+    document.addEventListener("DOMContentLoaded", () => {
+        renderPortfolioChart("#transactionGraph");
+    });
+    </script>
         
 </body>
 </html>
