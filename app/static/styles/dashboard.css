@@ -86,48 +86,90 @@
 
 .dashboard-graph-section {
     width: 70%;
-    height: 80vh;
+    height: 350px;
     border-radius: 10px;
     border: 1.2px solid lightgray;
+
+    padding: 5px;
 }
 
 .dashboard-graph-section svg {
     width: 100%;
-    height: 100%;
+    height: 80%;
 }
 
 .dashboard-transactions-section {
     width: 30%;
     border-radius: 10px;
     border: 1.2px solid lightgray;
+
+    padding: 5px;
 }
 
-.graph-range-buttons {
-  display: flex;
+.graph-controls {
+  margin-bottom: 10px;
 }
 
-.range-btn {
-  padding: 4px 10px;
+.graph-dropdown {
+  padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  background: #f7f7f7;
+  background: white;
+  font-size: 14px;
   cursor: pointer;
-  font-size: 12px;
 }
 
-.range-btn.active {
-  background: black;
-  color: white;
-  border-color: black;
-}
 
 .graph-header {
     display: flex;
     flex-direction: row;
 
     justify-content: space-between;
+    align-items: center;
 
     padding: 10px;
 
     font-family: "Poppins", sans-serif;
+}
+
+/* TRAMSACTION HISTORY CARD */
+.transaction-history-card {
+    display: flex;
+    flex-direction: row;
+
+    font-family: "Roboto", sans-serif;
+
+    gap: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-radius: 6px;
+
+    justify-content: center;
+}
+
+.transaction-history-card:hover {
+    background-color: lightgray;
+}
+
+.transaction-text-section {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.transaction-text-section-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.transaction-text-section-subheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.transaction-plus-img {
+    height: 36px;
 }

@@ -50,21 +50,59 @@
             <div class="graph-header">
                 <span>Sample Title</span>
 
-                <div class="graph-range-buttons">
-                    <button class="range-btn">1D</button>
-                    <button class="range-btn">7D</button>
-                    <button class="range-btn active">1M</button>
-                    <button class="range-btn">3M</button>
+                <div class="graph-controls">
+                    <select id="rangeSelect" class="graph-dropdown">
+                        <option value="1D">1 Day</option>
+                        <option value="7D">7 Days</option>
+                        <option value="1M" selected>1 Month</option>
+                        <option value="3M">3 Months</option>
+                    </select>
                 </div>
             </div>
-
-            
 
             <svg id="transactionGraph"></svg>
         </div>
 
         <div class="dashboard-transactions-section">
             <p>Transaction History</p>
+
+            <div class="transaction-history-card">
+                <img src="/static/images/plus.png" alt="Plus sign png" class="transaction-plus-img">
+                
+                <div class="transaction-text-section">
+
+                    <div class="transaction-text-section-header">
+                        <span>Market Sell</span>
+                        <span>+$3.05</span>
+                    </div>
+
+                    <div class="transaction-text-section-subheader">
+                        <span>Feb 9, 2026</span>
+                        <span>ETH at $2,145.00</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="transaction-history-card">
+                <img src="/static/images/minus.png" alt="Minus sign png" class="transaction-plus-img">
+                
+                <div class="transaction-text-section">
+
+                    <div class="transaction-text-section-header">
+                        <span>Market Buy</span>
+                        <span>-$102.05</span>
+                    </div>
+
+                    <div class="transaction-text-section-subheader">
+                        <span>Feb 9, 2026</span>
+                        <span>BTC at $32.00</span>
+                    </div>
+
+                </div>
+            </div>
+
+            
         </div>
        </div>
 
